@@ -1,5 +1,5 @@
 
-namespace Biblioteca.Entidades;
+namespace Biblioteca.Repositorios;
 public interface IRepoEstadio
 {
     void AltaEstadio(Estadio estadio);

@@ -1,5 +1,5 @@
 using Biblioteca;
-using Biblioteca.Entidades;
+using Biblioteca.Repositorios;
 using Dapper;
 using System.Data;
 
@@ -35,7 +35,7 @@ public class RepoPais : RepoDapper , IRepoPais
         parametros.Add("nombreDt", pais.NombreEntrenador);
         parametros.Add("unGrupo", pais.Grupo);
         parametros.Add("unLenguaje", pais.Lenguaje);
-        parametros.Add("unaPoblacion",((uint)pais.Poblacion));
+        parametros.Add("unaPoblacion",pais.Poblacion);
         parametros.Add("unaCapital ", pais.Capital);
         parametros.Add("unHimno", pais.Himno);
         parametros.Add("unaBandera", pais.Bandera);
@@ -50,3 +50,4 @@ public class RepoPais : RepoDapper , IRepoPais
         pais.IdPais = parametros.Get<byte>("unIdPais");
     }
 }
+// vanderaPtb.Imaje = Pais.vandera 

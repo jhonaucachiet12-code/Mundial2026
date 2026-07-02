@@ -1,5 +1,5 @@
 ﻿using Biblioteca;
-using Biblioteca.Entidades;
+using Biblioteca.Repositorios;
 using MySql.Data.MySqlClient;
 using Repositorios.ConDapper;
 namespace TestRepoDappper;
@@ -11,7 +11,7 @@ public class TestRepoPais
 
     public TestRepoPais()
     {
-        var cadena = "Server=localhost;Database=bd_Mundial22;Uid=5to_agbd;Pwd=Trigg3rs!;";
+        var cadena = "Server=localhost;Database=bd_Mundial26;Uid=5to_agbd;Pwd=Trigg3rs!;";
         var conexion = new MySqlConnection(cadena);
         _repo = new RepoPais(conexion);
     }
@@ -35,9 +35,9 @@ public class TestRepoPais
             Lenguaje = "Frances",
             Poblacion = 24100000,
             Capital = "Uagadugú",
-            Himno =  null,
-            Bandera = null,
-            CamisetaOficial = null,
+            Himno = "himnoargentino",
+            Bandera = "vandera",
+            CamisetaOficial = "oficial",
             Datocurioso = "Exite"
 
         };

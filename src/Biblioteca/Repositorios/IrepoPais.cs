@@ -1,4 +1,4 @@
-namespace Biblioteca.Entidades;
+namespace Biblioteca.Repositorios;
 public interface IRepoPais
 {
     IEnumerable<Pais> ObtenerPaises();

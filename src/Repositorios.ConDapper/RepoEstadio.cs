@@ -1,5 +1,5 @@
 ﻿using Biblioteca;
-using Biblioteca.Entidades;
+using Biblioteca.Repositorios;
 using Dapper;
 using System.Data;
 

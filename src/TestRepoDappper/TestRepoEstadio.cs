@@ -1,4 +1,4 @@
-using Biblioteca.Entidades;
+using Biblioteca.Repositorios;
 using MySql.Data.MySqlClient;
 using Repositorios.ConDapper;
 namespace TestRepoDappper;

@@ -13,6 +13,7 @@ public class Pais
     public string Bandera {get;set;}
     public string CamisetaOficial {get;set;}
     public string Datocurioso {get;set;} 
+    public int puntosRankingFifa {get;set;}
     public override string ToString()
         => $"{IdPais} - {Nombre}";
 }

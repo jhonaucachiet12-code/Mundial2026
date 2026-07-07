@@ -38,7 +38,8 @@ public class TestRepoPais
             Himno = "himnoargentino",
             Bandera = "vandera",
             CamisetaOficial = "oficial",
-            Datocurioso = "Exite"
+            Datocurioso = "Exite",
+            puntosRankingFifa = 1200
 
         };
 

@@ -41,6 +41,7 @@ public class RepoPais : RepoDapper , IRepoPais
         parametros.Add("unaBandera", pais.Bandera);
         parametros.Add("unaCamisetaOficial", pais.CamisetaOficial);
         parametros.Add("UnDatoCurioso", pais.Datocurioso);
+        parametros.Add("unosPuntos",pais.puntosRankingFifa);
         
 
         //Ejecutamos el SP del MySQL

@@ -53,14 +53,58 @@ BEGIN
    SET FOREIGN_KEY_CHECKS = 1;
 END $$
 
-DROP PROCEDURE IF EXISTS altaPais $$
-CREATE PROCEDURE altaPais  (OUT unIdPais TINYINT UNSIGNED, nombrePais VARCHAR(20),
-                           nombreDt VARCHAR(30), unGrupo CHAR(1))
+DELIMITER $$
+DROP PROCEDURE if EXISTS altaPais
+CREATE PROCEDURE altaPais(
+    -- Parámetro de salida para el ID generado
+    OUT unIdPais INT,
+    
+    -- Parámetros de entrada (Ajusta las longitudes VARCHAR según tu base de datos)
+    IN nombrePais VARCHAR(100),
+    IN nombreDt VARCHAR(100),
+    IN unGrupo CHAR(1),
+    IN unLenguaje VARCHAR(50),
+    IN unaPoblacion INT,          -- O BIGINT si la población es muy grande
+    IN unaCapital VARCHAR(100),
+    IN unHimno VARCHAR(255),      -- Puede ser la ruta del archivo o texto
+    IN unaBandera VARCHAR(255),   -- Ruta de la imagen o blob
+    IN unaCamisetaOficial VARCHAR(255),
+    IN UnDatoCurioso TEXT,        -- Usamos TEXT por si es un dato largo
+    IN unosPuntos INT
+)
 BEGIN
-   INSERT INTO Pais  (nombre, nombreEntrenador, grupo)
-            VALUES   (nombrePais, nombreDt, unGrupo);
-   SET unIdPais = LAST_INSERT_ID();
-END $$
+    -- 1. Insertar los datos en la tabla (Asegúrate de que los nombres de las columnas coincidan con tu tabla)
+    INSERT INTO Pais (
+        nombre, 
+        nombreEntrenador, 
+        grupo, 
+        lenguaje, 
+        poblacion, 
+        capital, 
+        himno, 
+        bandera, 
+        camisetaOficial, 
+        datoCurioso, 
+        puntosRankingFifa
+    ) 
+    VALUES (
+        nombrePais, 
+        nombreDt, 
+        unGrupo, 
+        unLenguaje, 
+        unaPoblacion, 
+        unaCapital, 
+        unHimno, 
+        unaBandera, 
+        unaCamisetaOficial, 
+        UnDatoCurioso, 
+        unosPuntos
+    );
+
+    -- 2. Asignar el ID auto-incremental generado a la variable de salida
+    SET unIdPais = LAST_INSERT_ID();
+    
+END$$
 
 DROP PROCEDURE IF EXISTS altaEstadio $$
 CREATE PROCEDURE altaEstadio  (OUT unIdEstadio TINYINT, nombreEstadio VARCHAR(40),

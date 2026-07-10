@@ -8,12 +8,12 @@ CREATE TABLE Pais (
     nombreEntrenador VARCHAR(30) NOT NULL,
     grupo CHAR(1) NOT NULL,
     poblacion INT NOT NULL,
-    Lengua VARCHAR(50) NOT NULL,
+    Lenguaje VARCHAR(50) NOT NULL,
     bandera VARCHAR(200) NOT NULL, -- Corrección ortográfica
     himno VARCHAR(200) NOT NULL,
     estadopolítico VARCHAR(200) NOT NULL,
     capital VARCHAR(50) NOT NULL,
-    camisetaOficial VARCHAR(50) NOT NULL,
+    Datocurioso VARCHAR(50) NOT NULL,
     puntosRankingFifa DECIMAL(6,2) NOT NULL DEFAULT 0.00, -- NUEVO: Base para la simulación
     CONSTRAINT PK_Pais PRIMARY KEY (idPais),
     CONSTRAINT UQ_Pais_nombre UNIQUE (nombre)
@@ -57,9 +57,9 @@ CREATE TABLE Partido(
 
 CREATE TABLE Posicion(
     idPosicion TINYINT AUTO_INCREMENT,
-    posicion CHAR(13) NOT NULL,
+    nombrePosicion CHAR(13) NOT NULL,
     CONSTRAINT PK_Posicion PRIMARY KEY (idPosicion),
-    CONSTRAINT UQ_Posicion_posicion UNIQUE (posicion)
+    CONSTRAINT UQ_Posicion_posicion UNIQUE (nombrePosicion)
 );
 
 CREATE TABLE Jugador(

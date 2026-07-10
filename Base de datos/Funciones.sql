@@ -124,6 +124,8 @@ CREATE PROCEDURE altaJugador(
     IN unApellido VARCHAR(27),
     IN unNacimiento DATE,
     IN unNumCamiseta TINYINT UNSIGNED,
+    IN unaAltura float,
+    IN unPeso float,
     OUT unIdJugador SMALLINT
 )
 BEGIN

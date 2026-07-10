@@ -114,3 +114,21 @@ BEGIN
             VALUES   (nombreEstadio, unaInfo);
    SET unIdEstadio = LAST_INSERT_ID();
 END $$
+--Alta Jugador
+DELIMITER $$
+
+CREATE PROCEDURE altaJugador(
+    IN unIdPais TINYINT,
+    IN unIdPosicion TINYINT,
+    IN unNombre VARCHAR(20),
+    IN unApellido VARCHAR(27),
+    IN unNacimiento DATE,
+    IN unNumCamiseta TINYINT UNSIGNED,
+    OUT unIdJugador SMALLINT
+)
+BEGIN
+    INSERT INTO Jugador (idPais, idPosicion, nombre, apellido, nacimiento, numCamiseta)
+    VALUES (unIdPais, unIdPosicion, unNombre, unApellido, unNacimiento, unNumCamiseta);
+
+    SET unIdJugador = LAST_INSERT_ID();
+END$$

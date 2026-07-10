@@ -36,7 +36,7 @@ public class RepoPais : RepoDapper , IRepoPais
         parametros.Add("unGrupo", pais.Grupo);
         parametros.Add("unLenguaje", pais.Lenguaje);
         parametros.Add("unaPoblacion",pais.Poblacion);
-        parametros.Add("unaCapital ", pais.Capital);
+        parametros.Add("unaCapital", pais.Capital);
         parametros.Add("unHimno", pais.Himno);
         parametros.Add("unaBandera", pais.Bandera);
         parametros.Add("unaCamisetaOficial", pais.CamisetaOficial);

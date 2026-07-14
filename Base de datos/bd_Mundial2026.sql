@@ -22,7 +22,7 @@ CREATE TABLE Pais (
 CREATE TABLE Estadio(
     idEstadio TINYINT AUTO_INCREMENT,
     nombre VARCHAR(40),
-    infoEstadio VARCHAR(200),
+    descripcion TEXT,
     CONSTRAINT PK_Estadio PRIMARY KEY (idEstadio),
     CONSTRAINT UQ_Estadio_nombre UNIQUE (nombre)
 );
@@ -57,9 +57,9 @@ CREATE TABLE Partido(
 
 CREATE TABLE Posicion(
     idPosicion TINYINT AUTO_INCREMENT,
-    nombrePosicion CHAR(13) NOT NULL,
+    posiciones CHAR(13) NOT NULL,
     CONSTRAINT PK_Posicion PRIMARY KEY (idPosicion),
-    CONSTRAINT UQ_Posicion_posicion UNIQUE (nombrePosicion)
+    CONSTRAINT UQ_Posicion_posicion UNIQUE (posiciones)
 );
 
 CREATE TABLE Jugador(

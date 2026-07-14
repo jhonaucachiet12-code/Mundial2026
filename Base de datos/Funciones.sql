@@ -53,6 +53,8 @@ BEGIN
    SET FOREIGN_KEY_CHECKS = 1;
 END $$
 
+
+--alta pais
 DELIMITER $$
 DROP PROCEDURE if EXISTS altaPais
 CREATE PROCEDURE altaPais(
@@ -106,6 +108,8 @@ BEGIN
     
 END$$
 
+
+--Alta estadio
 DROP PROCEDURE IF EXISTS altaEstadio $$
 CREATE PROCEDURE altaEstadio  (OUT unIdEstadio TINYINT, nombreEstadio VARCHAR(40),
                            unaInfo VARCHAR(200))
@@ -114,6 +118,9 @@ BEGIN
             VALUES   (nombreEstadio, unaInfo);
    SET unIdEstadio = LAST_INSERT_ID();
 END $$
+
+
+
 --Alta Jugador
 DELIMITER $$
 
@@ -134,3 +141,23 @@ BEGIN
 
     SET unIdJugador = LAST_INSERT_ID();
 END$$
+
+
+--alta Posicion
+DELIMITER $$
+CREATE Procedure altaPosicion( out unIdPosicion int, in unaPosicion string)
+BEGIN
+
+   INSERT into Posicion (posiciones)
+   VALUES(unaPosicion);
+
+   SET unIdPosicion = last_insert_id
+
+end $$
+
+
+--alta Tipo de Partido
+DELIMITER $$
+
+CREATE Procedure altaTipoPartido
+

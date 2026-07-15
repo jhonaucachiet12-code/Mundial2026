@@ -9,12 +9,12 @@ CREATE TABLE Pais (
     grupo CHAR(1) NOT NULL,
     poblacion INT NOT NULL,
     Lenguaje VARCHAR(50) NOT NULL,
-    bandera VARCHAR(200) NOT NULL, -- Corrección ortográfica
+    bandera VARCHAR(200) NOT NULL, 
     himno VARCHAR(200) NOT NULL,
     estadopolítico VARCHAR(200) NOT NULL,
     capital VARCHAR(50) NOT NULL,
     Datocurioso VARCHAR(50) NOT NULL,
-    puntosRankingFifa DECIMAL(6,2) NOT NULL DEFAULT 0.00, -- NUEVO: Base para la simulación
+    puntosRankingFifa DECIMAL(6,2) NOT NULL , 
     CONSTRAINT PK_Pais PRIMARY KEY (idPais),
     CONSTRAINT UQ_Pais_nombre UNIQUE (nombre)
 );

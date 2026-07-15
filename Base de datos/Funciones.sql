@@ -18,8 +18,18 @@ BEGIN
 
    RETURN id;
 END $$
+
+--alta partido
 DROP PROCEDURE IF EXISTS altaPartido $$
-CREATE PROCEDURE altaPartido (OUT unIdPartido TINYINT, unIdTipoPartido TINYINT, unIdLocal TINYINT, unIdVisitante TINYINT, unIdEstadio TINYINT, unaFecha TIMESTAMP,   unosGolesLocales TINYINT UNSIGNED, unosGolesVisitantes TINYINT UNSIGNED, unaDuracion TINYINT UNSIGNED)
+CREATE PROCEDURE altaPartido (OUT unIdPartido TINYINT,
+                              unIdTipoPartido TINYINT,
+                              unIdLocal TINYINT, 
+                              unIdVisitante TINYINT, 
+                              unIdEstadio TINYINT, 
+                              unaFecha TIMESTAMP,   
+                              unosGolesLocales TINYINT UNSIGNED, 
+                              unosGolesVisitantes TINYINT UNSIGNED, 
+                              unaDuracion TINYINT UNSIGNED)
 BEGIN
    INSERT INTO Partido (idTipoPartido, idLocal, idVisitante, idEstadio, fecha, golesLocales, golesVisitantes, duracion)
       VALUES      (unIdTipoPartido , unIdLocal , unIdVisitante , unIdEstadio , unaFecha, unosGolesLocales, unosGolesVisitantes, unaDuracion);
@@ -57,50 +67,46 @@ END $$
 --alta pais
 DELIMITER $$
 DROP PROCEDURE if EXISTS altaPais
-CREATE PROCEDURE altaPais(
-    -- Parámetro de salida para el ID generado
-    OUT unIdPais INT,
-    
-    -- Parámetros de entrada (Ajusta las longitudes VARCHAR según tu base de datos)
-    IN nombrePais VARCHAR(100),
-    IN nombreDt VARCHAR(100),
-    IN unGrupo CHAR(1),
-    IN unLenguaje VARCHAR(50),
-    IN unaPoblacion INT,          -- O BIGINT si la población es muy grande
-    IN unaCapital VARCHAR(100),
-    IN unHimno VARCHAR(255),      -- Puede ser la ruta del archivo o texto
-    IN unaBandera VARCHAR(255),   -- Ruta de la imagen o blob
-    IN unaCamisetaOficial VARCHAR(255),
-    IN UnDatoCurioso TEXT,        -- Usamos TEXT por si es un dato largo
-    IN unosPuntos INT
+CREATE PROCEDURE altaPais(OUT unIdPais INT,
+                           IN nombrePais VARCHAR(100),
+                           IN nombreDt VARCHAR(100),
+                           IN unGrupo CHAR(1),
+                           IN unLenguaje VARCHAR(50),
+                           IN unaPoblacion INT,          
+                           IN unaCapital VARCHAR(100),
+                           IN unHimno VARCHAR(255),      
+                           IN unaBandera VARCHAR(255),   
+                           IN unaCamisetaOficial VARCHAR(255),
+                           IN UnDatoCurioso TEXT,        
+                           IN unosPuntos INT
 )
 BEGIN
     -- 1. Insertar los datos en la tabla (Asegúrate de que los nombres de las columnas coincidan con tu tabla)
     INSERT INTO Pais (
-        nombre, 
-        nombreEntrenador, 
-        grupo, 
-        lenguaje, 
-        poblacion, 
-        capital, 
-        himno, 
-        bandera, 
-        camisetaOficial, 
-        datoCurioso, 
-        puntosRankingFifa
+      nombre, 
+      nombreEntrenador, 
+      grupo, 
+      lenguaje, 
+      poblacion, 
+      capital, 
+      himno, 
+      bandera, 
+      camisetaOficial, 
+      datoCurioso, 
+      puntosRankingFifa
     ) 
     VALUES (
-        nombrePais, 
-        nombreDt, 
-        unGrupo, 
-        unLenguaje, 
-        unaPoblacion, 
-        unaCapital, 
-        unHimno, 
-        unaBandera, 
-        unaCamisetaOficial, 
-        UnDatoCurioso, 
-        unosPuntos
+      nombrePais, 
+      nombreDt, 
+      unGrupo, 
+      unLenguaje, 
+      unaPoblacion, 
+      unaCapital, 
+      unHimno, 
+      unaBandera, 
+      unaCamisetaOficial, 
+      UnDatoCurioso, 
+      unosPuntos
     );
 
     -- 2. Asignar el ID auto-incremental generado a la variable de salida
@@ -114,7 +120,7 @@ DROP PROCEDURE IF EXISTS altaEstadio $$
 CREATE PROCEDURE altaEstadio  (OUT unIdEstadio TINYINT, nombreEstadio VARCHAR(40),
                            unaInfo VARCHAR(200))
 BEGIN
-   INSERT INTO Estadio  (nombre, infoEstadio)
+   INSERT INTO Estadio  (nombre, descripcion)
             VALUES   (nombreEstadio, unaInfo);
    SET unIdEstadio = LAST_INSERT_ID();
 END $$
@@ -125,27 +131,27 @@ END $$
 DELIMITER $$
 
 CREATE PROCEDURE altaJugador(
-    IN unIdPais TINYINT,
-    IN unIdPosicion TINYINT,
-    IN unNombre VARCHAR(20),
-    IN unApellido VARCHAR(27),
-    IN unNacimiento DATE,
-    IN unNumCamiseta TINYINT UNSIGNED,
-    IN unaAltura float,
-    IN unPeso float,
-    OUT unIdJugador SMALLINT
+   IN unIdPais TINYINT,
+   IN unIdPosicion TINYINT,
+   IN unNombre VARCHAR(20),
+   IN unApellido VARCHAR(27),
+   IN unNacimiento DATE,
+   IN unNumCamiseta TINYINT UNSIGNED,
+   IN unaAltura float,
+   IN unPeso float,
+   OUT unIdJugador SMALLINT
 )
 BEGIN
-    INSERT INTO Jugador (idPais, idPosicion, nombre, apellido, nacimiento, numCamiseta)
-    VALUES (unIdPais, unIdPosicion, unNombre, unApellido, unNacimiento, unNumCamiseta);
+   INSERT INTO Jugador (idPais, idPosicion, nombre, apellido, nacimiento, numCamiseta)
+   VALUES (unIdPais, unIdPosicion, unNombre, unApellido, unNacimiento, unNumCamiseta);
 
-    SET unIdJugador = LAST_INSERT_ID();
+   SET unIdJugador = LAST_INSERT_ID();
 END$$
 
 
 --alta Posicion
 DELIMITER $$
-CREATE Procedure altaPosicion( out unIdPosicion int, in unaPosicion string)
+CREATE Procedure altaPosicion( out unIdPosicion TINYINT, in unaPosicion string)
 BEGIN
 
    INSERT into Posicion (posiciones)
@@ -159,5 +165,29 @@ end $$
 --alta Tipo de Partido
 DELIMITER $$
 
-CREATE Procedure altaTipoPartido
+CREATE Procedure altaTipoPartido( out unIdTipoPartido TINYINT, in unTipoDePartido string)
 
+begin
+
+   INSERT INTO TipoPartido(idTipoPartido, TipoDePartido)
+   VALUES(unidPais, unTipoDePartido);
+
+   SET unIdTipoPartido = last_insert_id;
+
+end $$
+
+--Alta Jugador Partido
+DELIMITER $$
+CREATE Procedure altaJugadorPartido (out unIdJugador int, 
+in unIdPartido int, 
+in unIdReemplazo int, 
+in unIngreso int, 
+in unIngresoAdicionado int , 
+in unEgreso int, 
+in unEgresoAdicionado int)
+
+begin
+
+INSERT into JugadorPartido (idJugador, idPartido, idReemplazo, ingreso, ingresoAdicionado, egreso,, egresoAdicionado )
+ VALUES(unIdJugador, unIdPartido, unIdReemplazo, unIngreso, unIngresoAdicionado, unEgreso, unEgresoAdicionado);
+end $$

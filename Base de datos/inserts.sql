@@ -86,3 +86,12 @@ INSERT INTO paises (idPais, nombre, nombreEntrenador, grupo, idioma, poblacion, 
 (46, 'Croacia', 'Zlatko Dalić', 'L', 'Croata', 3800000, 'Zagreb', ' ', ' ', ' ', 'Se les atribuye la invención y popularización de la corbata moderna.', 1714.87),
 (47, 'Ghana', 'Otto Addo', 'L', 'Inglés', 33000000, 'Acra', ' ', ' ', ' ', 'Fue el primer país del África subsahariana en obtener su independencia colonial en 1957.', 1395.00),
 (48, 'Panamá', 'Thomas Christiansen', 'L', 'Español', 4400000, 'Ciudad de Panamá', ' ', ' ', ' ', 'Es el único lugar del mundo donde se puede ver el amanecer sobre el Pacífico y el atardecer sobre el Atlántico.', 1485.00);
+
+INSERT INTO TipoPartido (idPartido, tipoPartido) VALUES
+(1, 'Fase de grupos'),
+(2, 'Dieciseisavos de final'),
+(3, 'Octavos de final'),
+(4, 'Cuartos de final'),
+(5, 'Semifinal'),
+(6, 'Partido por el tercer puesto'),
+(7, 'Final');

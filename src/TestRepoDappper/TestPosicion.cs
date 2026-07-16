@@ -30,23 +30,25 @@ public class TestRepoPosicion
         // Then
     }
 
-    [Fact]
-    public void creaPosicion()
+    [Theory]
+    [InlineData("Defensor")]
+    [InlineData("Atacante")]
+    public void creaPosicion(string strPosicion)
     {
-        var Porteros1 = new Posicion()
+        var posicion = new Posicion()
         {
-          posiciones = "Portero"  
+          posiciones = strPosicion  
         };
         var paisNoExiste = _repo.ObtenerPosiciones().
-                            FirstOrDefault(p => p.posiciones == "Portero");
+                            FirstOrDefault(p => p.posiciones == strPosicion);
 
         Assert.Null(paisNoExiste);
 
-        _repo.CrearPosicion(Porteros1);
+        _repo.CrearPosicion(posicion);
 
-        var porterorepo = _repo.ObtenerPosiciones().
-                            FirstOrDefault(p => p.posiciones == "Portero");
-        Assert.NotNull(porterorepo);
+        var posicionRepo = _repo.ObtenerPosiciones().
+                            FirstOrDefault(p => p.posiciones == strPosicion);
+        Assert.NotNull(posicionRepo);
         
         // Given
     

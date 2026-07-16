@@ -29,7 +29,7 @@ CREATE TABLE Estadio(
 
 CREATE TABLE TipoPartido(
     idTipoPartido TINYINT AUTO_INCREMENT,
-    TipoDePartido CHAR(13),
+    TipoDePartido CHAR(50),
     PRIMARY KEY(idTipoPartido),
     CONSTRAINT UQ_TipoDePartido UNIQUE (TipoDePartido)
 );

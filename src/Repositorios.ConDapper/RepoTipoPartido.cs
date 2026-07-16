@@ -11,7 +11,7 @@ public class RepoTipoPartido : RepoDapper, IrepoTipoPartido
 
     public IEnumerable<TipoPartido> ObtenerTipoPartidos()
     {
-        var consulta = @"SELECT * FROM TipoPartido ORDER BY nombre ASC";
+        var consulta = @"SELECT * FROM TipoPartido ORDER BY TipoDePartido ASC";
         var TipoPartido = _conexion.Query<TipoPartido>(consulta);
         return TipoPartido;
     } 

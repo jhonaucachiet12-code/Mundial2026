@@ -12,9 +12,9 @@ public class RepoPosicion : RepoDapper , IRepoPosicion
 
     public IEnumerable<Posicion> ObtenerPosiciones ()
     {
-        var consulta1 = "select * from Posicion ORDER BY posicion ASC";
-        var Posiciones = _conexion.Query<Posicion>(consulta1);
-        return Posiciones;
+        var consulta1 = "select * from Posicion ORDER BY posiciones ASC";
+        var Posiciones1 = _conexion.Query<Posicion>(consulta1);
+        return Posiciones1;
     }
     public Posicion? ObtenerPosicion (byte idPosicion)
     {

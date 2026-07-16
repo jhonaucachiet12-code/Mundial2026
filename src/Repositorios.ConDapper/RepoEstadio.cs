@@ -11,7 +11,7 @@ public class RepoEstadio :RepoDapper, IRepoEstadio
     private static readonly string _query
         = @"SELECT  idEstadio,
                     nombre,
-                    infoEstadio descripcion
+                    descripcion
                     FROM Estadio";
     private static readonly string _queryDetalle
         = string.Concat(_query,

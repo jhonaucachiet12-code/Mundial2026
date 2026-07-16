@@ -19,7 +19,7 @@ public class TestRepoEstadio
     {
         var estadios = _repo.Obtener();
 
-        Assert.Contains(estadios, e => e.Nombre == "Estadio de Lusail");
-        Assert.Contains(estadios, e => e.Nombre == "Estadio Internacional Khalifa");
+        Assert.Contains(estadios, e => e.Nombre == "Estadio Azteca");
+        Assert.Contains(estadios, e => e.Nombre == "Estadio Akron");
     }
 }

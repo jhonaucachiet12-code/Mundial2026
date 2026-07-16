@@ -18,11 +18,11 @@ public class TestTipoPartido
     }
 
     [Fact]
-    public void TraerPosicion()
+    public void TraerTipodePartido ()
     {
         var tipoDPartidos =  _repo.ObtenerTipoPartidos();
 
-        Assert.Contains(tipoDPartidos, p => p.TipoDePartido == "8tavos de final");
+        Assert.Contains(tipoDPartidos, p => p.TipoDePartido == "Octavos de final");
 
 
         // Given
@@ -33,23 +33,23 @@ public class TestTipoPartido
     }
 
     [Fact]
-    public void TestName()
+    public void crarTipoPartido()
     {
-        var Defensor = new TipoPartido()
+        var crearFinal = new TipoPartido()
         {
-            TipoDePartido = "Defensor"
+            TipoDePartido = "Final"
         };
 
         var PosicionnoExiste = _repo.ObtenerTipoPartidos().FirstOrDefault(P => P.TipoDePartido == "Defensor");
 
         
-        Assert.Null(Defensor);
-        _repo.CrearTipoPartido(Defensor);
+        Assert.Null(crearFinal);
+        _repo.CrearTipoPartido(crearFinal);
 
         var obtenerDefensor = _repo.ObtenerTipoPartidos().FirstOrDefault(P => P.TipoDePartido == "Defensor");
-        Assert.NotNull(Defensor);
+        Assert.NotNull(crearFinal);
 
-        Assert.Equal("Defensor" , Defensor.TipoDePartido);
+        Assert.Equal("Defensor" , crearFinal.TipoDePartido);
         // Given
     
         // When

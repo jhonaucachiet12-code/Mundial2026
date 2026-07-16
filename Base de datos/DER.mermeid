@@ -1,0 +1,87 @@
+erDiagram
+    PAIS {
+        tinyint idPais PK
+        varchar nombre "UQ"
+        varchar nombreEntrenador
+        char grupo
+        int poblacion
+        varchar Lenguaje
+        varchar bandera
+        varchar himno
+        varchar estadopolitico
+        varchar capital
+        varchar Datocurioso
+        decimal puntosRankingFifa
+    }
+
+    ESTADIO {
+        tinyint idEstadio PK
+        varchar nombre "UQ"
+        text descripcion
+    }
+
+    TIPO_PARTIDO {
+        tinyint idTipoPartido PK
+        char TipoDePartido "UQ"
+    }
+
+    PARTIDO {
+        tinyint idPartido PK
+        tinyint idTipoPartido FK
+        tinyint idLocal FK
+        tinyint idVisitante FK
+        tinyint idEstadio FK
+        timestamp fecha
+        tinyint golesLocales
+        tinyint golesVisitantes
+        tinyint duracion
+    }
+
+    POSICION {
+        tinyint idPosicion PK
+        char posiciones "UQ"
+    }
+
+    JUGADOR {
+        smallint idJugador PK
+        tinyint idPais FK
+        tinyint idPosicion FK
+        varchar nombre
+        varchar apellido
+        date nacimiento
+        tinyint numCamiseta "UQ (idPais, numCamiseta)"
+    }
+
+    JUGADOR_PARTIDO {
+        smallint idJugador PK, FK
+        tinyint idPartido PK, FK
+        smallint idReemplazo FK
+        tinyint ingreso
+        tinyint ingresoAdicionado
+        tinyint egreso
+        tinyint egresoAdicionado
+    }
+
+    SIMULACION_RESULTADO {
+        int idSimulacion PK
+        tinyint idPais FK
+        timestamp fechaSimulacion
+        int puntosSimulados
+        varchar faseAlcanzada
+        tinyint posicionFinal
+    }
+
+    %% Relaciones
+    TIPO_PARTIDO ||--o{ PARTIDO : "clasifica a"
+    ESTADIO ||--o{ PARTIDO : "alberga"
+    PAIS ||--o{ PARTIDO : "juega como Local"
+    PAIS ||--o{ PARTIDO : "juega como Visitante"
+    
+    PAIS ||--o{ JUGADOR : "tiene"
+    POSICION ||--o{ JUGADOR : "asigna a"
+    
+    PARTIDO ||--o{ JUGADOR_PARTIDO : "participa en"
+    JUGADOR ||--o{ JUGADOR_PARTIDO : "juega"
+    JUGADOR ||--o{ JUGADOR_PARTIDO : "reemplaza a (idReemplazo)"
+
+    PAIS ||--o{ SIMULACION_RESULTADO : "es simulado en"

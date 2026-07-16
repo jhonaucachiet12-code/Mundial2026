@@ -36,12 +36,11 @@ public class TestPartido
 
         var caboVerdeVSArgentina = new Partido()
         {
-          IdPartido = 37,
           IdTipoPartido = 2,
           IdLocal = 37,
           IdVisitante = 30,
           IdEstadio =  12,
-          Fecha = '2026-7-3-10-12-3',
+          Fecha = new DateTime(1993-03-03),
           GolesLocales = 3,
           GolesVisitantes = 2,
           Duracion = 120,   

@@ -1,6 +1,6 @@
 using Biblioteca;
 using Biblioteca.Repositorios;
-using MySql.Data.MySqlClient;
+using MySqlConnector;
 using Repositorios.ConDapper;
 namespace TestRepoDappper;
 

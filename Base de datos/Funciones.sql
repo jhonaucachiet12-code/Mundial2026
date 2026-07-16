@@ -114,7 +114,7 @@ BEGIN
     
 END$$
 
-
+DELIMITER $$
 --Alta estadio
 DROP PROCEDURE IF EXISTS altaEstadio $$
 CREATE PROCEDURE altaEstadio  (OUT unIdEstadio TINYINT, nombreEstadio VARCHAR(40),
@@ -129,7 +129,7 @@ END $$
 
 --Alta Jugador
 DELIMITER $$
-
+DROP PROCEDURE IF EXISTS altaJugador$$
 CREATE PROCEDURE altaJugador(
    IN unIdPais TINYINT,
    IN unIdPosicion TINYINT,
@@ -151,6 +151,7 @@ END$$
 
 --alta Posicion
 DELIMITER $$
+DROP PROCEDURE IF EXISTS  altaPosicion $$
 CREATE Procedure altaPosicion( out unIdPosicion TINYINT, in unaPosicion string)
 BEGIN
 
@@ -164,7 +165,7 @@ end $$
 
 --alta Tipo de Partido
 DELIMITER $$
-
+DROP PROCEDURE IF EXISTS altaTipoPartido $$
 CREATE Procedure altaTipoPartido( out unIdTipoPartido TINYINT, in unTipoDePartido string)
 
 begin
@@ -178,6 +179,7 @@ end $$
 
 --Alta Jugador Partido
 DELIMITER $$
+DROP PROCEDURE IF EXISTS  altaJugadorPartido $$
 CREATE Procedure altaJugadorPartido (out unIdJugador int, 
 in unIdPartido int, 
 in unIdReemplazo int, 

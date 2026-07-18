@@ -11,7 +11,7 @@ public class TestJugador
 
     public TestJugador()
     {
-        var cadena = "Server=localhost;Database=bd_Mundial26;Uid=5to_agbd;Pwd=Trigg3rs!;";
+        var cadena = "Server=localhost;Database=bd_Mundial26;Uid=root;Pwd=1001;";
         var conexion = new MySqlConnection(cadena);
         _repo = new RepoJugador(conexion);
     }

@@ -1,28 +1,28 @@
 -- Inserción de las 4 posiciones principales del fútbol
-INSERT INTO posiciones (idposicion, posicion) VALUES
+INSERT INTO Posicion (idPosicion, posiciones) VALUES
 (1, 'Portero'),
-(2, 'Defensa'),
+(2, 'Defensor'),
 (3, 'Centrocampista'),
 (4, 'Delantero');
 
 -- Inserción de los 16 estadios del Mundial 2026
-INSERT INTO Estadio (idestadio, nombre, descripcion) VALUES
-(1, 'Estadio Azteca (Estadio Ciudad de México)', 'Ubicado en la Ciudad de México, México. Un templo histórico del fútbol mundial con capacidad para 80,824 espectadores; albergará el partido inaugural.'),
-(2, 'Estadio Akron (Estadio Guadalajara)', 'Ubicado en Zapopan, Jalisco, México. Una de las infraestructuras más modernas del país con capacidad para 45,664 espectadores.'),
-(3, 'Estadio BBVA (Estadio Monterrey)', 'Ubicado en Guadalupe, Nuevo León, México. Conocido como el Gigante de Acero, cuenta con capacidad para 51,243 espectadores y vistas espectaculares al Cerro de la Silla.'),
-(4, 'BMO Field (Estadio Toronto)', 'Ubicado en Toronto, Canadá. Estadio específico de fútbol que será expandido para recibir a 43,036 espectadores durante la cita mundialista.'),
-(5, 'BC Place (Estadio BC Place Vancouver)', 'Ubicado en Vancouver, Canadá. Estadio multipropósito con techo retráctil y capacidad para 52,497 espectadores.'),
-(6, 'MetLife Stadium (Estadio Nueva York Nueva Jersey)', 'Ubicado en East Rutherford, Nueva Jersey, Estados Unidos. Cuenta con una imponente capacidad para 80,663 espectadores y será la gran sede de la Final del torneo.'),
-(7, 'AT&T Stadium (Estadio Dallas)', 'Ubicado en Arlington, Texas, Estados Unidos. Un coloso tecnológico con techo retráctil y una capacidad de 70,649 espectadores que recibirá la mayor cantidad de partidos del torneo.'),
-(8, 'SoFi Stadium (Estadio Los Ángeles)', 'Ubicado en Inglewood, California, Estados Unidos. Una maravilla arquitectónica de reciente construcción con capacidad para 70,492 espectadores.'),
-(9, 'Mercedes-Benz Stadium (Estadio Atlanta)', 'Ubicado en Atlanta, Georgia, Estados Unidos. Estadio ultra moderno con techo retráctil geométrico y capacidad para 68,239 espectadores.'),
-(10, 'NRG Stadium (Estadio Houston)', 'Ubicado en Houston, Texas, Estados Unidos. Recinto multiusos totalmente climatizado y con techo retráctil, con capacidad para 68,777 espectadores.'),
-(11, 'Arrowhead Stadium (Estadio Kansas City)', 'Ubicado en Kansas City, Misuri, Estados Unidos. Famoso por su icónico ambiente ruidoso, cuenta con una capacidad para 69,045 espectadores.'),
-(12, 'Hard Rock Stadium (Estadio Miami)', 'Ubicado en Miami Gardens, Florida, Estados Unidos. Estadio multieventos de categoría global con capacidad para 64,478 espectadores; albergará el partido por el tercer puesto.'),
-(13, 'Gillette Stadium (Estadio Boston)', 'Ubicado en Foxborough, Massachusetts, Estados Unidos. Histórico recinto deportivo del área de Boston con capacidad para 64,146 espectadores.'),
-(14, 'Lincoln Financial Field (Estadio Filadelfia)', 'Ubicado en Filadelfia, Pensilvania, Estados Unidos. Escenario imponente con capacidad para 68,324 espectadores en la costa este norteamericana.'),
-(15, 'Levi''s Stadium (Estadio Bahía de San Francisco)', 'Ubicado en Santa Clara, California, Estados Unidos. Uno de los estadios más ecológicos y tecnológicos del mundo, con capacidad para 68,827 espectadores.'),
-(16, 'Lumen Field (Estadio Seattle)', 'Ubicado en Seattle, Washington, Estados Unidos. Con una emblemática arquitectura en forma de herradura y capacidad para 66,925 espectadores.');
+INSERT INTO Estadio (idEstadio, nombre, descripcion) VALUES
+(1, 'Estadio Azteca', 'Ubicado en la Ciudad de México, México. Un templo histórico del fútbol mundial con capacidad para 80,824 espectadores; albergará el partido inaugural.'),
+(2, 'Estadio Akron', 'Ubicado en Zapopan, Jalisco, México. Una de las infraestructuras más modernas del país con capacidad para 45,664 espectadores.'),
+(3, 'Estadio BBVA', 'Ubicado en Guadalupe, Nuevo León, México. Conocido como el Gigante de Acero, cuenta con capacidad para 51,243 espectadores y vistas espectaculares al Cerro de la Silla.'),
+(4, 'BMO Field', 'Ubicado en Toronto, Canadá. Estadio específico de fútbol que será expandido para recibir a 43,036 espectadores durante la cita mundialista.'),
+(5, 'BC Place', 'Ubicado en Vancouver, Canadá. Estadio multipropósito con techo retráctil y capacidad para 52,497 espectadores.'),
+(6, 'MetLife Stadium', 'Ubicado en East Rutherford, Nueva Jersey, Estados Unidos. Cuenta con una imponente capacidad para 80,663 espectadores y será la gran sede de la Final del torneo.'),
+(7, 'AT&T Stadium', 'Ubicado en Arlington, Texas, Estados Unidos. Un coloso tecnológico con techo retráctil y una capacidad de 70,649 espectadores que recibirá la mayor cantidad de partidos del torneo.'),
+(8, 'SoFi Stadium', 'Ubicado en Inglewood, California, Estados Unidos. Una maravilla arquitectónica de reciente construcción con capacidad para 70,492 espectadores.'),
+(9, 'Mercedes-Benz Stadium', 'Ubicado en Atlanta, Georgia, Estados Unidos. Estadio ultra moderno con techo retráctil geométrico y capacidad para 68,239 espectadores.'),
+(10, 'NRG Stadium', 'Ubicado en Houston, Texas, Estados Unidos. Recinto multiusos totalmente climatizado y con techo retráctil, con capacidad para 68,777 espectadores.'),
+(11, 'Arrowhead Stadium', 'Ubicado en Kansas City, Misuri, Estados Unidos. Famoso por su icónico ambiente ruidoso, cuenta con una capacidad para 69,045 espectadores.'),
+(12, 'Hard Rock Stadium', 'Ubicado en Miami Gardens, Florida, Estados Unidos. Estadio multieventos de categoría global con capacidad para 64,478 espectadores; albergará el partido por el tercer puesto.'),
+(13, 'Gillette Stadium', 'Ubicado en Foxborough, Massachusetts, Estados Unidos. Histórico recinto deportivo del área de Boston con capacidad para 64,146 espectadores.'),
+(14, 'Lincoln Financial Field', 'Ubicado en Filadelfia, Pensilvania, Estados Unidos. Escenario imponente con capacidad para 68,324 espectadores en la costa este norteamericana.'),
+(15, 'Levi''s Stadium', 'Ubicado en Santa Clara, California, Estados Unidos. Uno de los estadios más ecológicos y tecnológicos del mundo, con capacidad para 68,827 espectadores.'),
+(16, 'Lumen Field', 'Ubicado en Seattle, Washington, Estados Unidos. Con una emblemática arquitectura en forma de herradura y capacidad para 66,925 espectadores.');
 
 
 -- Inserción de las 48 selecciones del Mundial 2026
@@ -95,3 +95,19 @@ INSERT INTO TipoPartido (idPartido, tipoPartido) VALUES
 (5, 'Semifinal'),
 (6, 'Partido por el tercer puesto'),
 (7, 'Final');
+
+
+-- insert TEst
+
+INSERT INTO Posicion (idPosicion, posiciones) VALUES
+(1, 'Portero'),
+(2, 'Defensor');
+
+INSERT INTO Estadio (idEstadio, nombre, descripcion) VALUES
+(1, 'Estadio Azteca', 'Ubicado en la Ciudad de México, México. Un templo histórico del fútbol mundial con capacidad para 80,824 espectadores; albergará el partido inaugural.'),
+(2, 'Estadio Akron', 'Ubicado en Zapopan, Jalisco, México. Una de las infraestructuras más modernas del país con capacidad para 45,664 espectadores.');
+
+
+INSERT INTO Pais (idPais, nombre, nombreEntrenador, grupo, Lenguaje, poblacion, capital, himno, bandera, camisetaOficial, datocurioso, puntosRankingFifa) VALUES
+(1, 'México', 'Javier Aguirre', 'A', 'Español', 129000000, 'Ciudad de México', ' ', ' ', ' ', 'Primer país en albergar tres Copas del Mundo en la historia.', 1687.48),
+(2, 'Sudáfrica', 'Hugo Broos', 'A', 'Zulú, Xhosa, Afrikáans, Inglés', 60000000, 'Pretoria', ' ', ' ', ' ', 'Conocida como la nación del arco iris por su diversidad cultural.', 1410.00);

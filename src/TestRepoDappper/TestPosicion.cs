@@ -11,7 +11,7 @@ public class TestRepoPosicion
 
     public TestRepoPosicion()
     {
-        var cadena = "Server=localhost;Database=bd_Mundial26;Uid=5to_agbd;Pwd=Trigg3rs!;";
+        var cadena = "Server=localhost;Database=bd_Mundial26;Uid=root;Pwd=1001;";
         var conexion = new MySqlConnection(cadena);
         _repo = new RepoPosicion(conexion);
     }
@@ -21,7 +21,7 @@ public class TestRepoPosicion
     {
         var paises = _repo.ObtenerPosiciones();
 
-        Assert.Contains(paises, p => p.posiciones == "Delantero");
+        Assert.Contains(paises, p => p.posiciones == "Defensor");
         Assert.Contains(paises, p => p.posiciones == "Portero");
         // Given
     
@@ -31,8 +31,8 @@ public class TestRepoPosicion
     }
 
     [Theory]
-    [InlineData("Defensor")]
-    [InlineData("Atacante")]
+    [InlineData("Centrocampista")]
+    [InlineData("Delantero")]
     public void creaPosicion(string strPosicion)
     {
         var posicion = new Posicion()
@@ -50,10 +50,7 @@ public class TestRepoPosicion
                             FirstOrDefault(p => p.posiciones == strPosicion);
         Assert.NotNull(posicionRepo);
         
-        // Given
-    
-        // When
-    
-        // Then
+        Assert.Equal(strPosicion, posicionRepo.posiciones);
+
     }
 }

@@ -4,16 +4,16 @@ USE bd_Mundial26 ;
 
 CREATE TABLE Pais (
     idPais TINYINT AUTO_INCREMENT,
-    nombre VARCHAR(20) NOT NULL,
-    nombreEntrenador VARCHAR(30) NOT NULL,
+    nombre VARCHAR(50) NOT NULL,
+    nombreEntrenador VARCHAR(50) NOT NULL,
     grupo CHAR(1) NOT NULL,
     poblacion INT NOT NULL,
     Lenguaje VARCHAR(50) NOT NULL,
-    bandera VARCHAR(200) NOT NULL, 
-    himno VARCHAR(200) NOT NULL,
-    estadopolítico VARCHAR(200) NOT NULL,
+    bandera VARCHAR(255) NOT NULL, 
+    himno VARCHAR(255) NOT NULL,
     capital VARCHAR(50) NOT NULL,
-    Datocurioso VARCHAR(50) NOT NULL,
+    datocurioso VARCHAR(255) NOT NULL,
+    camisetaOficial varchar(255) not null,
     puntosRankingFifa DECIMAL(6,2) NOT NULL , 
     CONSTRAINT PK_Pais PRIMARY KEY (idPais),
     CONSTRAINT UQ_Pais_nombre UNIQUE (nombre)
@@ -21,7 +21,7 @@ CREATE TABLE Pais (
 
 CREATE TABLE Estadio(
     idEstadio TINYINT AUTO_INCREMENT,
-    nombre VARCHAR(40),
+    nombre VARCHAR(50),
     descripcion TEXT,
     CONSTRAINT PK_Estadio PRIMARY KEY (idEstadio),
     CONSTRAINT UQ_Estadio_nombre UNIQUE (nombre)
@@ -29,7 +29,7 @@ CREATE TABLE Estadio(
 
 CREATE TABLE TipoPartido(
     idTipoPartido TINYINT AUTO_INCREMENT,
-    TipoDePartido CHAR(50),
+    TipoDePartido varchar(50),
     PRIMARY KEY(idTipoPartido),
     CONSTRAINT UQ_TipoDePartido UNIQUE (TipoDePartido)
 );
@@ -57,7 +57,7 @@ CREATE TABLE Partido(
 
 CREATE TABLE Posicion(
     idPosicion TINYINT AUTO_INCREMENT,
-    posiciones CHAR(13) NOT NULL,
+    posiciones varchar(20) NOT NULL,
     CONSTRAINT PK_Posicion PRIMARY KEY (idPosicion),
     CONSTRAINT UQ_Posicion_posicion UNIQUE (posiciones)
 );
@@ -66,10 +66,12 @@ CREATE TABLE Jugador(
     idJugador SMALLINT PRIMARY KEY AUTO_INCREMENT,
     idPais TINYINT NOT NULL,
     idPosicion TINYINT NOT NULL,
-    nombre VARCHAR(20) NOT NULL,
-    apellido VARCHAR(27) NOT NULL,
+    nombre VARCHAR(50) NOT NULL,
+    apellido VARCHAR(50) NOT NULL,
     nacimiento DATE NOT NULL,
     numCamiseta TINYINT UNSIGNED NOT NULL,
+    altura float not null,
+    peso float not null,
     CONSTRAINT FK_Jugador_Pais FOREIGN KEY (idPais)
         REFERENCES Pais (idPais),
     CONSTRAINT FK_Jugador_Posicion  FOREIGN KEY (idPosicion)

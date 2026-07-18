@@ -11,7 +11,7 @@ public class TestRepoPais
 
     public TestRepoPais()
     {
-        var cadena = "Server=localhost;Database=bd_Mundial26;Uid=5to_agbd;Pwd=Trigg3rs!;";
+        var cadena = "Server=localhost;Database=bd_Mundial26;Uid=root;Pwd=1001;";
         var conexion = new MySqlConnection(cadena);
         _repo = new RepoPais(conexion);
     }
@@ -21,8 +21,8 @@ public class TestRepoPais
     {
         var paises = _repo.ObtenerPaises();
 
-        Assert.Contains(paises, p => p.Nombre == "Argentina");
-        Assert.Contains(paises, p => p.Nombre == "Francia");
+        Assert.Contains(paises, p => p.Nombre == "México");
+        Assert.Contains(paises, p => p.Nombre == "Sudáfrica");
     }
     [Fact]
     public void CrearBurkinafaso()

@@ -21,7 +21,7 @@ public class TestRepoJugadorPartido
     {
         var jugadoenpartido = _repo.ObtenerJugadorPartidos();
 
-        Assert.Contains(jugadoenpartido, p => p.IdPartido == 37);
+        Assert.Contains(jugadoenpartido, p => p.IdPartido == 1);
         // Given
     
         // When
@@ -35,8 +35,8 @@ public class TestRepoJugadorPartido
 
         var salida = new JugadorPartido()
         {
-          IdJugador = 332,
-          IdPartido = 37,
+          IdJugador = 2,
+          IdPartido = 1,
           IdReemplazo = null,
           Ingreso = null,
           IngresoAdicionado = null,
@@ -44,13 +44,13 @@ public class TestRepoJugadorPartido
           Egreso = null
         };
 
-        var obtenerAlJugador = _repo.ObtenerJugadorPartidos().FirstOrDefault(p => p.IdJugador == 332);
+        var obtenerAlJugador = _repo.ObtenerJugadorPartidos().FirstOrDefault(p => p.IdJugador == 2);
 
         Assert.Null(obtenerAlJugador);
 
         _repo.CrearJugadorPartido(salida);
 
-        var jugaDorPartido = _repo.ObtenerJugadorPartidos().FirstOrDefault(p => p.IdJugador == 332);
+        var jugaDorPartido = _repo.ObtenerJugadorPartidos().FirstOrDefault(p => p.IdJugador == 2);
 
         Assert.NotNull(salida);
         // Given

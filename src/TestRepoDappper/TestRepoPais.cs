@@ -39,7 +39,8 @@ public class TestRepoPais
             Bandera = "vandera",
             CamisetaOficial = "oficial",
             Datocurioso = "Exite",
-            puntosRankingFifa = 1200
+            puntosRankingFifa = 1200,
+            DirecMapa = "mapa"
 
         };
 

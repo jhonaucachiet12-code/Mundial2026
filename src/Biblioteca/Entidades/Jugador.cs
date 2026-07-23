@@ -11,6 +11,7 @@ public class Jugador
     public byte NumCamiseta { get; set; }
     public double Altura {get;set;}
     public double Peso {get;set;}
+    public string DirecImjJugador{get;set;}
     public Pais Pais {get;set;}
     public Posicion Posicion{get;set;}
     public override string ToString()

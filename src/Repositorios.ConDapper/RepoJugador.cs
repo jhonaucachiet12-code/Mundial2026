@@ -67,6 +67,7 @@ public class RepoJugador : RepoDapper, IRepoJugador
         parametros.Add("unNumCamiseta", jugador.NumCamiseta);
         parametros.Add("unaAltura", jugador.Altura);
         parametros.Add("unPeso", jugador.Peso);
+        parametros.Add("unaDirecImjJugador", jugador.DirecImjJugador);
 
         //Ejecutamos el SP del MySQL
         _conexion.Execute("altaJugador", parametros, commandType: CommandType.StoredProcedure);

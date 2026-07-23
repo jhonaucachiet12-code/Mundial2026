@@ -96,6 +96,38 @@ INSERT INTO TipoPartido (idPartido, tipoPartido) VALUES
 (6, 'Partido por el tercer puesto'),
 (7, 'Final');
 
+-- Jugadores
+INSERT INTO Jugador (idJugador, idPais, idPosicion, nombre, apellido, nacimiento, numCamiseta, altura, peso, direcImjJugador) VALUES
+-- Mexico
+(1, 1, 1, 'Raúl', 'Rangel', '2000-03-27', 1, 1.90, 80.0, ' '),
+(2, 1, 1, 'Carlos', 'Acevedo', '1996-04-19', 12, 1.84, 73.0, ' '),
+(3, 1, 1, 'Guillermo', 'Ochoa', '1985-07-13', 13, 1.85, 78.0, ' '),
+(4, 1, 2, 'Jorge', 'Sánchez', '1997-12-10', 2, 1.75, 71.0, ' '),
+(5, 1, 2, 'César', 'Montes', '1997-02-24', 3, 1.95, 84.0, ' '),
+(6, 1, 2, 'Edson', 'Álvarez', '1997-10-24', 4, 1.87, 73.0, ' '),
+(7, 1, 2, 'Johan', 'Vásquez', '1998-10-22', 5, 1.84, 76.0, ' '),
+(8, 1, 2, 'Israel', 'Reyes', '2000-05-23', 15, 1.79, 74.0, ' '),
+(9, 1, 2, 'Mateo', 'Chávez', '2004-05-12', 20, 1.72, 68.0, ' '),
+(10, 1, 2, 'Jesús', 'Gallardo', '1994-08-15', 23, 1.77, 72.0, ' '),
+(11, 1, 3, 'Erik', 'Lira', '2000-05-08', 6, 1.72, 69.0, ' '),
+(12, 1, 3, 'Luis', 'Romo', '1995-06-05', 7, 1.84, 82.0, ' '),
+(13, 1, 3, 'Álvaro', 'Fidalgo', '1997-04-09', 8, 1.74, 68.0, ' '),
+(14, 1, 3, 'Orbelín', 'Pineda', '1996-03-24', 17, 1.69, 64.0, ' '),
+(15, 1, 3, 'Obed', 'Vargas', '2005-08-05', 18, 1.75, 70.0, ' '),
+(16, 1, 3, 'Gilberto', 'Mora', '2008-10-14', 19, 1.68, 62.0, ' '),
+(17, 1, 3, 'Luis', 'Chávez', '1996-01-15', 24, 1.78, 73.0, ' '),
+(18, 1, 3, 'Brian', 'Gutiérrez', '2003-06-17', 26, 1.78, 71.0, ' '),
+(19, 1, 4, 'Raúl', 'Jiménez', '1991-05-05', 9, 1.90, 81.0, ' '),
+(20, 1, 4, 'Alexis', 'Vega', '1997-11-25', 10, 1.73, 77.0, ' '),
+(21, 1, 4, 'Santiago', 'Giménez', '2001-04-18', 11, 1.83, 78.0, ' '),
+(22, 1, 4, 'Armando', 'González', '2003-04-20', 14, 1.79, 72.0, ' '),
+(23, 1, 4, 'Julián', 'Quiñones', '1997-03-24', 16, 1.78, 79.0, ' '),
+(24, 1, 4, 'César', 'Huerta', '2000-12-03', 21, 1.73, 68.0, ' '),
+(25, 1, 4, 'Guillermo', 'Martínez', '1995-03-15', 22, 1.91, 85.0, ' '),
+(26, 1, 4, 'Roberto', 'Alvarado', '1998-09-07', 25, 1.76, 70.0, ' ');
+
+
+
 
 -- insert TEst
 
@@ -111,3 +143,4 @@ INSERT INTO Estadio (idEstadio, nombre, descripcion) VALUES
 INSERT INTO Pais (idPais, nombre, nombreEntrenador, grupo, Lenguaje, poblacion, capital, himno, bandera, camisetaOficial, datocurioso, puntosRankingFifa) VALUES
 (1, 'México', 'Javier Aguirre', 'A', 'Español', 129000000, 'Ciudad de México', ' ', ' ', ' ', 'Primer país en albergar tres Copas del Mundo en la historia.', 1687.48),
 (2, 'Sudáfrica', 'Hugo Broos', 'A', 'Zulú, Xhosa, Afrikáans, Inglés', 60000000, 'Pretoria', ' ', ' ', ' ', 'Conocida como la nación del arco iris por su diversidad cultural.', 1410.00);
+

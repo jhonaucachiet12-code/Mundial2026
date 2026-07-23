@@ -22,7 +22,7 @@ public class TestJugador
 
         var jugador = _repo.ObtenerJugadores();
 
-        Assert.Contains(jugador, p =>p.Nombre == "Lionel Andres Messi");
+        Assert.Contains(jugador, p =>p.Nombre == "Raúl");
         // Given
     
         // When
@@ -35,21 +35,24 @@ public class TestJugador
     {
         var Dibu = new Jugador()
         {
-          IdPais = 30,
+          IdPais = 1,
           IdPosicion = 1,
-          Nombre ="Damián Emiliano",
-          Apellido ="Martínez Romero",
-          Nacimiento = new DateTime(1992-6-2),
-          NumCamiseta = 23
+          Nombre ="Guillermo",
+          Apellido ="Ochoa",
+          Nacimiento = new DateTime(1992,6,2),
+          NumCamiseta = 23,
+          Altura = 1.87,
+          Peso = 83,
+          DirecImjJugador = " ",
         };
 
-        var obtenerjugador = _repo.ObtenerJugadores().FirstOrDefault(p => p.Nombre == "Damián Emiliano" );
+        var obtenerjugador = _repo.ObtenerJugadores().FirstOrDefault(p => p.Nombre == "Guillermo" );
 
         Assert.Null(obtenerjugador);
 
         _repo.CrearJugador(Dibu);
 
-        var Partidocreado = _repo.ObtenerJugadores().FirstOrDefault(p => p.Nombre == "Damián Emiliano");
+        var Partidocreado = _repo.ObtenerJugadores().FirstOrDefault(p => p.Nombre == "Guillermo");
 
         Assert.NotNull(Partidocreado);
         // Given

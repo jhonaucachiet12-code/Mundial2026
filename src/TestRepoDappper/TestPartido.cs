@@ -37,26 +37,26 @@ public class TestPartido
         var caboVerdeVSArgentina = new Partido()
         {
           IdTipoPartido = 2,
-          IdLocal = 37,
-          IdVisitante = 30,
-          IdEstadio =  12,
-          Fecha = new DateTime(1993-03-03),
-          GolesLocales = 3,
-          GolesVisitantes = 2,
-          Duracion = 120,   
+          IdLocal = 3,
+          IdVisitante = 4,
+          IdEstadio =  2,
+          Fecha = new DateTime(2026,06,11),
+          GolesLocales = 2,
+          GolesVisitantes = 1,
+          Duracion = 98,   
         };
 
         
 
         var partidoNoExiste = _repo.ObtenerPartidos().
-                            FirstOrDefault(p => p.IdPartido == 1);
+                            FirstOrDefault(p => p.Duracion == 98);
 
         Assert.Null(partidoNoExiste);
 
         _repo.CrearPartido(caboVerdeVSArgentina);
 
         var partidorepo = _repo.ObtenerPartidos().
-                            FirstOrDefault(p => p.IdPartido == 1);
+                            FirstOrDefault(p => p.Duracion == 98);
         Assert.NotNull(partidorepo);
         // Given
 

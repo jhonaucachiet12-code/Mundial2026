@@ -63,7 +63,7 @@ public class RepoPartido : RepoDapper, IRepoPartido
     public void CrearPartido(Partido partido)
     {
         var parametros = new DynamicParameters();
-        parametros.Add("unIdPartido", direction: ParameterDirection.Output);
+        parametros.Add("unIdPartido",dbType: DbType.Byte,direction: ParameterDirection.Output);
         parametros.Add("unIdTipoPartido", partido.IdTipoPartido);
         parametros.Add("unIdLocal", partido.IdLocal);
         parametros.Add("unIdVisitante", partido.IdVisitante);

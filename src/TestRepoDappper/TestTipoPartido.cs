@@ -40,16 +40,16 @@ public class TestTipoPartido
             TipoDePartido = "Final"
         };
 
-        var PosicionnoExiste = _repo.ObtenerTipoPartidos().FirstOrDefault(P => P.TipoDePartido == "Defensor");
+        var TipoDePartidoNoExiste = _repo.ObtenerTipoPartidos().FirstOrDefault(P => P.TipoDePartido == "Final");
 
         
-        Assert.Null(crearFinal);
+        Assert.Null(TipoDePartidoNoExiste);
         _repo.CrearTipoPartido(crearFinal);
 
-        var obtenerDefensor = _repo.ObtenerTipoPartidos().FirstOrDefault(P => P.TipoDePartido == "Defensor");
-        Assert.NotNull(crearFinal);
+        var obtenerTipoPartido = _repo.ObtenerTipoPartidos().FirstOrDefault(P => P.TipoDePartido == "Final");
+        Assert.NotNull(obtenerTipoPartido);
 
-        Assert.Equal("Defensor" , crearFinal.TipoDePartido);
+        Assert.Equal("Final" , crearFinal.TipoDePartido);
         // Given
     
         // When

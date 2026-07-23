@@ -29,7 +29,7 @@ public class RepoTipoPartido : RepoDapper, IrepoTipoPartido
     public void CrearTipoPartido(TipoPartido tipoPartido)
     {
         var parametros = new DynamicParameters();
-        parametros.Add("unIdTipoPartido",tipoPartido.idTipoPartido);
+        parametros.Add("unIdTipoPartido", dbType: DbType.Byte, direction: ParameterDirection.Output);
         parametros.Add("unTipoDePartido",tipoPartido.TipoDePartido);
 
          //Ejecutamos el SP del MySQL
